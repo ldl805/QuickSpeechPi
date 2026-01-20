@@ -1,4 +1,4 @@
-# Quick Text-to-Speech (TTS) GUI
+# QuickSpeechPi
 
 A simple, lightweight Python application that provides a graphical interface for the `espeak` text-to-speech synthesizer.
 
