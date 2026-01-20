@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=Quick Speech
+Comment=Type text and hear it spoken
+# UPDATE THE PATHS BELOW TO MATCH YOUR INSTALLATION LOCATION
+Exec=python3 /path/to/your/tts_gui_project/tts_gui.py
+Path=/path/to/your/tts_gui_project/
+Icon=accessories-dictionary
+Terminal=false
+Type=Application
+Categories=Utility;AudioVideo;
