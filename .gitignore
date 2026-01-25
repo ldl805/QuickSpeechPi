@@ -6,3 +6,10 @@ __pycache__/
 # OS
 .DS_Store
 Thumbs.db
+
+# Build artifacts
+build/
+dist/
+release_dist/
+*.spec
+venv/

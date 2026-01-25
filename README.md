@@ -14,7 +14,16 @@ A simple, lightweight Python application that provides a graphical interface for
 - `espeak` engine.
 - `tkinter` (Python's standard GUI library).
 
-## Installation
+## Downloading a Release (Recommended)
+
+If you don't want to install Python or manage code, you can download the latest pre-built version from the **Releases** page on GitHub.
+
+1.  Download `QuickSpeechPi-linux.zip`.
+2.  Extract the zip file.
+3.  Ensure `espeak` is installed (`sudo apt install espeak`).
+4.  Double-click `QuickSpeechPi` to run.
+
+## Installation (From Source)
 
 1.  **Clone or download this repository.**
 2.  **Run the setup script** to install necessary system dependencies (`espeak` and `python3-tk`):

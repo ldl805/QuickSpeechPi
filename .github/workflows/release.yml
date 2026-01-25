@@ -1,0 +1,54 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+        
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y python3-tk espeak
+        
+    - name: Create venv and install dependencies
+      run: |
+        python3 -m venv venv
+        ./venv/bin/pip install --upgrade pip
+        ./venv/bin/pip install pyinstaller
+        
+    - name: Build Application
+      run: |
+        chmod +x build_release.sh
+        ./build_release.sh
+        
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: QuickSpeechPi-linux
+        path: release_dist/QuickSpeechPi-linux.zip
+
+    - name: Create Release
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: release_dist/QuickSpeechPi-linux.zip
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
