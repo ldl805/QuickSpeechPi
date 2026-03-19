@@ -14,22 +14,35 @@ A simple, lightweight Python application that provides a graphical interface for
 - `espeak` engine.
 - `tkinter` (Python's standard GUI library).
 
-## Downloading a Release (Recommended)
+## Installation (Recommended)
 
-If you don't want to install Python or manage code, you can download the latest pre-built version from the **Releases** page on GitHub.
+### Option 1: Debian Package (Pi/Ubuntu/Debian)
 
-1.  Download `QuickSpeechPi-linux.zip`.
+Download the latest `.deb` file from the [Releases](https://github.com/ldl805/QuickSpeechPi/releases) page and install it using:
+
+```bash
+sudo apt update
+sudo apt install ./quickspeechpi_1.1_all.deb
+```
+
+### Option 2: Standalone Zip
+
+1.  Download `QuickSpeechPi-linux.zip` from the Releases page.
 2.  Extract the zip file.
-3.  Ensure `espeak` is installed (`sudo apt install espeak`).
-4.  Double-click `QuickSpeechPi` to run.
+3.  Ensure system dependencies are installed: `sudo apt install espeak python3-tk`
+4.  Run the `QuickSpeechPi` binary.
 
 ## Installation (From Source)
 
-1.  **Clone or download this repository.**
-2.  **Run the setup script** to install necessary system dependencies (`espeak` and `python3-tk`):
+1.  **Clone this repository.**
+2.  **Run the setup script** to install necessary system dependencies:
     ```bash
     chmod +x setup.sh
     ./setup.sh
+    ```
+3.  **Run the application:**
+    ```bash
+    python3 tts_gui.py
     ```
 
 ## Usage
@@ -38,15 +51,6 @@ Run the application directly with Python:
 ```bash
 python3 tts_gui.py
 ```
-
-### Desktop Shortcut
-A `.desktop` file is included for easier access. To install it:
-
-1.  Open `tts_gui.desktop` and ensure the paths match your installation location.
-2.  Copy it to your applications folder:
-    ```bash
-    cp tts_gui.desktop ~/.local/share/applications/
-    ```
 
 ## License
 MIT License

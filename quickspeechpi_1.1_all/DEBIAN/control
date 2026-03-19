@@ -1,0 +1,10 @@
+Package: quickspeechpi
+Version: 1.1
+Section: utils
+Priority: optional
+Architecture: all
+Depends: python3, python3-tk, espeak
+Maintainer: ldl805 <ldl805@github.com>
+Description: Quick Speech Pi
+ Quick Speech Pi is a simple text-to-speech GUI designed for the Raspberry Pi.
+ It uses espeak to convert text into speech with adjustable pitch and speed.
