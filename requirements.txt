@@ -1,6 +1,7 @@
-# This project uses only the Python standard library.
-# No external PyPI packages are required.
-# 
 # System-level dependencies (install via setup.sh):
 # - python3-tk
 # - espeak
+
+# Optional PyPI packages for Cloud Gemini TTS:
+google-genai>=2.0.0
+python-dotenv>=1.0.0
