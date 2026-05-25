@@ -2,7 +2,7 @@
 # Script to build a Debian package for QuickSpeechPi
 
 APP_NAME="quickspeechpi"
-VERSION="1.1"
+VERSION="1.2"
 PKG_DIR="${APP_NAME}_${VERSION}_all"
 
 echo "Building Debian package $PKG_DIR..."
