@@ -2,8 +2,8 @@
 Version=1.0
 Name=Quick Speech
 Comment=Type text and hear it spoken
-Exec=quickspeechpi
-Path=/usr/share/quickspeechpi/
+Exec=/home/sysadm/QuickSpeechPi/venv/bin/python /home/sysadm/QuickSpeechPi/tts_gui.py
+Path=/home/sysadm/QuickSpeechPi/
 Icon=accessories-dictionary
 Terminal=false
 Type=Application

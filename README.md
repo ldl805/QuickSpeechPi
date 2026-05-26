@@ -32,7 +32,7 @@ To use the realistic Gemini Cloud TTS voices:
 Download the latest `.deb` file and install it:
 ```bash
 sudo apt update
-sudo apt install ./quickspeechpi_1.2_all.deb
+sudo apt install ./quickspeechpi_1.2.1_all.deb
 ```
 
 ### Option 2: Standalone Release Zip

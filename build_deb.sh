@@ -2,7 +2,7 @@
 # Script to build a Debian package for QuickSpeechPi
 
 APP_NAME="quickspeechpi"
-VERSION="1.2"
+VERSION="1.2.1"
 PKG_DIR="${APP_NAME}_${VERSION}_all"
 
 echo "Building Debian package $PKG_DIR..."
@@ -36,7 +36,20 @@ chmod 755 "$PKG_DIR/usr/bin/$APP_NAME"
 
 # Copy application files
 cp tts_gui.py "$PKG_DIR/usr/share/$APP_NAME/"
-cp tts_gui.desktop "$PKG_DIR/usr/share/applications/$APP_NAME.desktop"
+
+# Generate system-wide desktop file dynamically
+cat <<EOF > "$PKG_DIR/usr/share/applications/$APP_NAME.desktop"
+[Desktop Entry]
+Version=1.0
+Name=Quick Speech
+Comment=Type text and hear it spoken
+Exec=$APP_NAME
+Path=/usr/share/$APP_NAME/
+Icon=accessories-dictionary
+Terminal=false
+Type=Application
+Categories=Utility;AudioVideo;
+EOF
 
 # Build package
 dpkg-deb --build --root-owner-group "$PKG_DIR"
